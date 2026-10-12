@@ -1,6 +1,6 @@
 # Sales Performance Dashboard — React + CSV + INR
 
-A responsive sales analytics dashboard built with **React, Vite, Recharts, and Lucide icons**. Upload a CSV file to generate charts, financial KPIs, product summaries, and an exportable report. All monetary values are displayed in **Indian Rupees (₹ / INR)**.
+A responsive, dark-mode sales analytics dashboard built with **React, Vite, Recharts, and Lucide icons**. The existing React app has been upgraded with a dark executive UI and date-range filters while keeping the R Shiny app untouched. Upload a CSV file to generate charts, financial KPIs, product summaries, and an exportable report. All monetary values are displayed in **Indian Rupees (₹ / INR)**.
 
 ## Features
 
@@ -9,8 +9,9 @@ A responsive sales analytics dashboard built with **React, Vite, Recharts, and L
 - **Editable column mapping:** correct the detected fields when your CSV uses different column names.
 - **INR financial formatting:** totals use Indian number grouping and ₹, with lakh (L) and crore (Cr) labels on charts.
 - **Live analytics:** total sales, profit, profit margin, transaction count, product count, monthly trends, region breakdown, category chart, and top products.
-- **Filters and search:** filter by region and category, and search products/items.
+- **Filters and search:** filter by date range, region, and category, and search products/items. All KPIs and charts recalculate immediately.
 - **CSV export:** download filtered report rows as `sales-report-INR.csv`.
+- **Dark modern UI:** midnight navy surfaces, violet accents, responsive panels, and readable charts.
 - **Responsive layout:** desktop, tablet, and mobile friendly.
 - **Privacy-minded demo:** CSV parsing and analysis happen in the browser; there is no upload API.
 
