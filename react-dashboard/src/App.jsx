@@ -40,7 +40,37 @@ const DEMO = [
 ]
 const normalize = (s) => String(s ?? '').trim().toLowerCase().replace(/[^a-z0-9]/g, '')
 function detectColumn(headers, patterns) {
-  return headers.find(h => patterns.some(p => normalize(h).includes(p))) || ''
+  // Prefer the most specific matching header, not just the first substring match.
+  // This avoids selecting "Unit Price" when a file also has "Total Revenue".
+  const scored = headers.map((header, index) => {
+    const key = normalize(header)
+    let score = 0
+    for (const pattern of patterns) {
+      if (key === pattern) score = Math.max(score, 100)
+      else if (key.startsWith(pattern)) score = Math.max(score, 70 + pattern.length)
+      else if (key.includes(pattern)) score = Math.max(score, 30 + pattern.length)
+    }
+    return { header, index, score }
+  }).filter(item => item.score > 0)
+  scored.sort((a, b) => b.score - a.score || a.index - b.index)
+  return scored[0]?.header || ''
+}
+function detectSalesColumn(headers) {
+  const normalized = headers.map(header => ({ header, key: normalize(header) }))
+  const priorities = [
+    ['totalrevenue', 'totalsales', 'salesrevenue', 'grosssales', 'net sales'.replace(/ /g, ''), 'revenue', 'salesamount', 'totalamount', 'ordertotal', 'orderamount', 'amount', 'sales', 'turnover'],
+  ][0]
+  for (const candidate of priorities) {
+    const exact = normalized.find(item => item.key === candidate)
+    if (exact) return exact.header
+  }
+  const preferred = normalized.find(item =>
+    /(total|gross|net)?(revenue|sales|amount|turnover)/.test(item.key) &&
+    !/(unit|price|cost|profit|tax|discount|margin|id|quantity|qty)/.test(item.key)
+  )
+  if (preferred) return preferred.header
+  // Never silently treat an ID, quantity, unit price, or cost as total sales.
+  return ''
 }
 function parseCSV(text) {
   const firstLine = text.replace(/^\uFEFF/, '').split(/\r?\n/, 1)[0] || ''
@@ -112,17 +142,13 @@ function App() {
       const parsed = parseCSV(await file.text())
       const h = parsed.headers
       const nextMapping = {
-        sales: detectColumn(h, ['sales','revenue','amount','total','turnover','price']),
-        profit: detectColumn(h, ['profit','netincome','marginamount']),
+        sales: detectSalesColumn(h),
+        profit: detectColumn(h, ['totalprofit','profit','netincome','marginamount']),
         date: detectColumn(h, ['orderdate','date','invoicedate','transactiondate','createdat']),
-        category: detectColumn(h, ['category','productgroup','type']),
+        category: detectColumn(h, ['category','productgroup','itemtype','type']),
         region: detectColumn(h, ['region','state','territory','zone','city']),
         product: detectColumn(h, ['productname','product','item','description','sku']),
-        quantity: detectColumn(h, ['quantity','qty','units','unitssold'])
-      }
-      if (!nextMapping.sales) {
-        const numericHeader = h.find(key => parsed.rows.some(r => String(r[key] ?? '').trim() !== '' && Number.isFinite(asNumber(r[key]))))
-        if (numericHeader) nextMapping.sales = numericHeader
+        quantity: detectColumn(h, ['quantity','qty','unitssold','units'])
       }
       setRows(parsed.rows)
       setHeaders(h)
