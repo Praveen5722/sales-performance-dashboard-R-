@@ -1,0 +1,29 @@
+OrderDate,Region,Category,Product,Segment,Sales,Profit,Quantity
+2026-01-05,East,Technology,Laptop,Consumer,1200,180,2
+2026-01-12,West,Furniture,Desk,Corporate,450,45,1
+2026-01-20,South,Office Supplies,Notebook,Home Office,80,24,8
+2026-02-03,North,Technology,Monitor,Consumer,320,64,2
+2026-02-11,East,Furniture,Chair,Corporate,210,21,3
+2026-02-18,West,Office Supplies,Printer Paper,Consumer,55,12,5
+2026-03-02,South,Technology,Tablet,Home Office,600,90,2
+2026-03-09,North,Furniture,Bookshelf,Consumer,280,-20,1
+2026-03-17,East,Office Supplies,Pen Set,Corporate,35,10,7
+2026-04-04,West,Technology,Keyboard,Consumer,95,19,3
+2026-04-13,South,Furniture,Table,Corporate,520,78,1
+2026-04-21,North,Office Supplies,Folder Pack,Home Office,42,8,6
+2026-05-06,East,Technology,Headphones,Consumer,160,48,2
+2026-05-14,West,Furniture,Chair,Home Office,190,15,2
+2026-05-22,South,Office Supplies,Ink Cartridge,Corporate,130,26,2
+2026-06-01,North,Technology,Laptop,Corporate,1500,225,2
+2026-06-10,East,Furniture,Desk,Consumer,430,43,1
+2026-06-19,West,Office Supplies,Notebook,Home Office,75,20,10
+2026-07-03,South,Technology,Monitor,Consumer,340,68,2
+2026-07-15,North,Furniture,Bookshelf,Corporate,310,31,1
+2026-07-23,East,Office Supplies,Printer Paper,Consumer,60,14,6
+2026-08-02,West,Technology,Tablet,Home Office,580,87,2
+2026-08-12,South,Furniture,Table,Consumer,490,-35,1
+2026-08-25,North,Office Supplies,Pen Set,Corporate,40,12,8
+2026-09-04,East,Technology,Keyboard,Home Office,110,22,3
+2026-09-13,West,Furniture,Chair,Consumer,205,20,2
+2026-09-20,South,Office Supplies,Folder Pack,Corporate,48,9,6
+2026-10-01,North,Technology,Headphones,Consumer,175,52,2
