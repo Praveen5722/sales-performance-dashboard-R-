@@ -10,7 +10,12 @@ library(DT)
 # Uses the project's own sales dataset and original styling.
 
 find_sample_data <- function() {
-  candidates <- c("sample_sales.csv", "../sample_sales.csv")
+  candidates <- c(
+    file.path("data", "sample_sales.csv"),
+    "sample_sales.csv",
+    file.path("..", "data", "sample_sales.csv"),
+    file.path("..", "sample_sales.csv")
+  )
   found <- candidates[file.exists(candidates)]
   if (length(found)) found[1] else NULL
 }
