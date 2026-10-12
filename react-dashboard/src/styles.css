@@ -7,3 +7,36 @@
 @media(max-width:980px){.sidebar{width:244px;transform:translateX(-100%);transition:transform .22s ease;box-shadow:15px 0 40px #101b2d20}.sidebar.sidebar-open{transform:translateX(0)}.main-area{margin-left:0}.mobile-menu{display:grid}.close-sidebar{display:grid;margin-left:auto;color:#9aa8bd}.mobile-scrim{display:block;position:fixed;inset:0;background:#0b132480;border:0;z-index:19}.topbar{padding:0 24px}.page-content{padding:25px 24px 16px}.stats-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.primary-grid{grid-template-columns:minmax(0,1.4fr) minmax(260px,1fr)}.secondary-grid{grid-template-columns:1fr}.category-chart{height:205px}.products-panel{min-width:0}}
 @media(max-width:700px){.topbar{height:60px;padding:0 15px}.top-actions{gap:9px}.search-box{width:38px;border:0;background:transparent;padding:0;justify-content:center}.search-box input,.search-box kbd{display:none}.top-divider,.help-button{display:none}.page-content{padding:23px 14px 14px}.page-heading{align-items:flex-start;flex-direction:column;margin-bottom:17px}.page-heading h1{font-size:24px}.heading-actions{width:100%}.heading-actions .select-wrap{flex:1}.heading-actions .select-wrap select{flex:1}.primary-button{flex-shrink:0;padding:0 11px}.filter-row{flex-wrap:wrap;gap:8px;padding:10px}.filter-caption{width:100%}.filter-select{flex:1;min-width:0}.filter-select select{min-width:0;width:100%}.filter-result{order:3;margin-left:2px;width:100%}.reset-button{margin-left:auto}.stats-grid{gap:10px}.stat-card{padding:13px}.stat-top{margin-bottom:12px}.stat-value{font-size:21px}.stat-note{font-size:8px}.primary-grid{grid-template-columns:1fr;gap:12px}.secondary-grid{gap:12px}.revenue-chart{height:220px;padding-left:0}.chart-legend{padding-top:16px;gap:12px}.chart-footer{align-items:flex-start;flex-direction:column}.region-panel .region-chart-wrap{padding-top:0}.region-legend{padding-bottom:12px}.product-table th{font-size:8px}.product-table td{padding-top:10px;padding-bottom:10px}.page-footer{flex-wrap:wrap;justify-content:center;gap:9px 15px}.notice-banner{margin:12px 14px 0}.breadcrumb{gap:7px;font-size:11px}}
 @media(max-width:380px){.stat-value{font-size:19px}.stat-card{padding:11px}.stat-foot{gap:4px}.change-pill{font-size:8px}.stat-note{font-size:8px}.heading-actions{gap:6px}.primary-button{font-size:10px}.donut-wrap{width:170px}.page-footer span:last-child{display:none}}
+
+/* CSV import and INR reporting additions */
+.secondary-button,.export-button{display:flex;align-items:center;justify-content:center;gap:7px;height:38px;padding:0 12px;border:1px solid #e5e9f1;background:#fff;border-radius:8px;color:#59667d;font-size:11px;font-weight:600;white-space:nowrap}
+.secondary-button:hover,.export-button:hover{background:#f8f9ff;border-color:#d8dcfb}
+.export-button{color:#7375e9;border-color:#dfe0ff}
+.export-button:disabled{opacity:.45;cursor:not-allowed}
+.upload-strip{display:flex;align-items:center;gap:13px;padding:13px 16px;border:1px solid #dfe9e8;background:linear-gradient(100deg,#f7fffc,#fff);border-radius:10px;margin-bottom:18px;min-width:0}
+.upload-file-icon{width:40px;height:40px;display:grid;place-items:center;flex-shrink:0;border-radius:10px;background:#e4f8f1;color:#229d80}
+.upload-file-copy{display:flex;flex-direction:column;gap:4px;min-width:0;flex:1}
+.upload-file-copy strong{font-size:12px;color:#344158;overflow-wrap:anywhere}
+.upload-file-copy span{font-size:10px;line-height:1.5;color:#8995a8}
+.imported-status{display:flex;align-items:center;gap:5px;padding:5px 8px;border-radius:6px;background:#e5f8f1;color:#199876;font-size:10px;font-weight:700;white-space:nowrap}
+.upload-link{display:flex;align-items:center;gap:5px;border:0;background:transparent;color:#7072e9;font-size:10px;font-weight:700;white-space:nowrap}
+.mapping-panel{margin-bottom:18px;padding-bottom:16px}
+.mapping-heading{align-items:center;padding-bottom:16px}
+.mapping-hint{font-size:10px;color:#8b70ce;background:#f2efff;border-radius:6px;padding:6px 8px;white-space:nowrap}
+.mapping-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;padding:0 20px}
+.mapping-field{display:flex;flex-direction:column;gap:7px;min-width:0}
+.mapping-field>span{font-size:10px;color:#68758b;font-weight:600}
+.mapping-field .select-wrap{width:100%;height:35px;min-width:0}
+.mapping-field .select-wrap select{min-width:0;width:100%;font-size:10px}
+.mapping-warning{margin:13px 20px 0;color:#b36a28;font-size:11px}
+.warning-large{padding:13px 16px;border:1px solid #f1d8ac;border-radius:9px;background:#fff9ec;margin:0 0 17px}
+.chart-unit{font-size:9px;color:#7e80e8;background:#f0f0ff;padding:6px 8px;border-radius:6px;white-space:nowrap}
+.summary-panel{margin-top:17px;padding-bottom:17px}
+.summary-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;padding:18px 20px 0}
+.summary-grid>div{display:flex;flex-direction:column;gap:7px;padding:13px;background:#fafbfe;border:1px solid #f0f2f7;border-radius:8px;min-width:0}
+.summary-grid span{font-size:10px;color:#8b95a7}
+.summary-grid strong{font:700 18px Manrope,sans-serif;color:#29364b;overflow-wrap:anywhere}
+@media(max-width:1250px){.mapping-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.heading-actions{flex-wrap:wrap}}
+@media(max-width:980px){.mapping-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.summary-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){.heading-actions{display:grid;grid-template-columns:1fr 1fr;width:100%}.heading-actions .primary-button,.heading-actions .export-button{width:100%}.heading-actions .secondary-button{width:100%}.upload-strip{align-items:flex-start;flex-wrap:wrap;padding:12px}.upload-file-copy{width:calc(100% - 55px);flex:auto}.imported-status{margin-left:52px}.upload-link{margin-left:auto}.mapping-heading{flex-direction:column;align-items:flex-start}.mapping-grid{grid-template-columns:1fr 1fr;padding:0 13px}.mapping-hint{white-space:normal}.mapping-panel .panel-heading{padding:15px 13px}.summary-grid{padding:13px;gap:8px}.summary-grid>div{padding:10px}.summary-grid strong{font-size:16px}.chart-unit{font-size:8px}.export-button{font-size:10px;padding:0 8px}}
+@media(max-width:390px){.mapping-grid{grid-template-columns:1fr}.heading-actions{grid-template-columns:1fr 1fr}.summary-grid{grid-template-columns:1fr 1fr}.upload-file-copy span{font-size:9px}}
